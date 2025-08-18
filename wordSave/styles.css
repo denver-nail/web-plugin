@@ -1,0 +1,158 @@
+/* Tooltip for selected word */
+.word-tooltip {
+    position: absolute;
+    background: #2c3e50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.word-tooltip button {
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+}
+
+.word-tooltip button:hover {
+    background: #2980b9;
+}
+
+/* Popup styles */
+.popup-body {
+    width: 350px;
+    min-height: 400px;
+    margin: 0;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popup-title {
+    color: #2c3e50;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.export-btn {
+    flex: 1;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+}
+
+.txt-btn {
+    background-color: #3498db;
+}
+
+.excel-btn {
+    background-color: #2ecc71;
+}
+
+.word-list-container {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.word-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.word-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    border-left: 3px solid #3498db;
+}
+
+.word-item .word-text {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.word-item .remove-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.word-item .remove-btn:hover {
+    opacity: 1;
+}
+
+.empty-message {
+    color: #7f8c8d;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.clear-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+    background-color: #c0392b;
+}

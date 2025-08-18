@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Word Saver</title>
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    >
+</head>
+
+<body class="popup-body">
+    <div class="popup-container">
+        <h1 class="popup-title"><i class="fas fa-book"></i> Word Saver</h1>
+
+        <div class="export-buttons">
+            <button
+                id="export-txt"
+                class="export-btn txt-btn"
+            >
+                <i class="fas fa-file-alt"></i> Export TXT
+            </button>
+            <button
+                id="export-excel"
+                class="export-btn excel-btn"
+            >
+                <i class="fas fa-file-excel"></i> Export Excel
+            </button>
+        </div>
+
+        <div class="word-list-container">
+            <h2>Saved Words (<span id="word-count">0</span>)</h2>
+            <div
+                id="word-list"
+                class="word-list"
+            >
+                <!-- Words will be inserted here -->
+                <p class="empty-message">No words saved yet. Select a word on any webpage and click "Save".</p>
+            </div>
+        </div>
+
+        <button
+            id="clear-all"
+            class="clear-btn"
+        >
+            <i class="fas fa-trash"></i> Clear All
+        </button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
