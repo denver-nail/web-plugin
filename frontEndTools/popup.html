@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>路径与命名转换工具</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 标题栏 -->
+      <div class="header">
+        <h1 class="title"><i class="fa fa-exchange mr-2"></i>前端工具集合</h1>
+      </div>
+
+      <!-- 功能标签页 -->
+      <div class="tabs">
+        <button id="pathTab" class="tab active">
+          <i class="fa fa-folder-open mr-1"></i>路径转换
+        </button>
+        <button id="namingTab" class="tab">
+          <i class="fa fa-code mr-1"></i>命名转换
+        </button>
+      </div>
+
+      <!-- 路径转换面板 -->
+      <div id="pathPanel" class="panel">
+        <div class="form-group">
+          <label for="pathInput">输入路径:</label>
+          <textarea
+            id="pathInput"
+            rows="3"
+            placeholder="例如: D:\Codes\project\file.txt"
+          ></textarea>
+        </div>
+
+        <div class="button-group">
+          <button id="convertPathBtn" class="convert-btn">
+            <i class="fa fa-refresh mr-1"></i>转换路径
+          </button>
+          <button id="copyPathBtn" class="copy-btn">
+            <i class="fa fa-copy mr-1"></i>复制结果
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="pathOutput">转换结果:</label>
+          <div class="output-container">
+            <textarea
+              id="pathOutput"
+              rows="3"
+              readonly
+              placeholder="转换后的路径将显示在这里"
+            ></textarea>
+            <span id="pathCopyStatus" class="copy-status">
+              <i class="fa fa-check"></i>已复制
+            </span>
+          </div>
+        </div>
+
+        <div class="hint">
+          <i class="fa fa-info-circle mr-1"></i>将反斜杠(\)转换为斜杠(/)
+        </div>
+      </div>
+
+      <!-- 命名转换面板 -->
+      <div id="namingPanel" class="panel hidden">
+        <div class="form-group">
+          <label for="nameInput">输入名称:</label>
+          <input
+            type="text"
+            id="nameInput"
+            placeholder="例如: my variable name!"
+          />
+        </div>
+
+        <div class="form-group">
+          <button id="convertNameBtn" class="convert-btn">
+            <i class="fa fa-refresh mr-1"></i>转换命名
+          </button>
+        </div>
+
+        <div class="output-group">
+          <div class="output-item">
+            <label>小驼峰命名 (camelCase):</label>
+            <div class="output-container">
+              <input type="text" id="camelCaseOutput" readonly />
+              <button class="inline-copy-btn" data-target="camelCaseOutput">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="output-item">
+            <label>大驼峰命名 (PascalCase):</label>
+            <div class="output-container">
+              <input type="text" id="pascalCaseOutput" readonly />
+              <button class="inline-copy-btn" data-target="pascalCaseOutput">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="output-item">
+            <label>蛇形命名 (snake_case):</label>
+            <div class="output-container">
+              <input type="text" id="snakeCaseOutput" readonly />
+              <button class="inline-copy-btn" data-target="snakeCaseOutput">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="output-item">
+            <label>大写蛇形命名 (UPPER_SNAKE_CASE):</label>
+            <div class="output-container">
+              <input type="text" id="upperSnakeCaseOutput" readonly />
+              <button
+                class="inline-copy-btn"
+                data-target="upperSnakeCaseOutput"
+              >
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="output-item">
+            <label>短横线命名 (kebab-case):</label>
+            <div class="output-container">
+              <input type="text" id="kebabCaseOutput" readonly />
+              <button class="inline-copy-btn" data-target="kebabCaseOutput">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="output-item">
+            <label>下划线命名 (保持原有大小写):</label>
+            <div class="output-container">
+              <input type="text" id="underscoreOutput" readonly />
+              <button class="inline-copy-btn" data-target="underscoreOutput">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 底部信息 -->
+      <div class="footer">
+        <p>路径与命名转换工具 v1.0</p>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
